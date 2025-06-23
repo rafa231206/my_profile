@@ -8,8 +8,8 @@ function selectMode(mode) {
     document.getElementById('toggleIcon').className = 'fas fa-moon';
   }
 
-  // Save preference to localStorage
-  localStorage.setItem('themePreference', mode);
+  // // Save preference to localStorage
+  // localStorage.setItem('themePreference', mode);
 
   // Hide mode selection and show profile card
   document.getElementById('modeSelection').style.opacity = '0';
@@ -35,16 +35,14 @@ function toggleTheme() {
   }
 }
 
-// Check for saved theme preference
 document.addEventListener('DOMContentLoaded', () => {
-  const savedTheme = localStorage.getItem('themePreference');
-  if (savedTheme) {
-    selectMode(savedTheme);
-    // Set correct icon for the toggle button
-    if (savedTheme === 'dark') {
-      document.getElementById('toggleIcon').className = 'fas fa-sun';
-    }
-  }
+  // Reset tampilan mode seleksi
+  const modeSelection = document.getElementById('modeSelection');
+  const profileCard = document.getElementById('profileCard');
+  
+  modeSelection.style.opacity = '1';
+  modeSelection.style.display = 'flex';
+  profileCard.style.display = 'none'; // Sembunyikan profil sampai mode dipilih
 });
 
 // Audio Player Functionality
