@@ -9,33 +9,24 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-  <!-- Mode Selection Screen -->
   <div class="mode-selection" id="modeSelection">
     <h2>Pilih Mode Tampilan</h2>
     <div class="mode-options">
       <div class="mode-btn light-mode-btn" onclick="selectMode('light')">
-        <i class="fas fa-sun"></i>
-        Mode Terang
+        <i class="fas fa-sun"></i> Mode Terang
       </div>
       <div class="mode-btn dark-mode-btn" onclick="selectMode('dark')">
-        <i class="fas fa-moon"></i>
-        Mode Gelap
+        <i class="fas fa-moon"></i> Mode Gelap
       </div>
     </div>
   </div>
 
-  <!-- Main Profile Card (hidden initially) -->
   <div class="profile-card" id="profileCard" style="display: none;">
-    <!-- Dark/Light Mode Toggle -->
     <div class="mode-toggle" id="modeToggle" onclick="toggleTheme()">
       <i class="fas fa-moon" id="toggleIcon"></i>
     </div>
 
-    <img
-      src="img/quality_restoration_20250330050655089.jpg"
-      alt="Raihan Fahrel Akbar"
-      class="profile-img"
-    />
+    <img src="img/quality_restoration_20250330050655089.jpg" alt="Raihan Fahrel Akbar" class="profile-img" />
 
     <div class="audio-player">
       <button class="play-btn" onclick="togglePlay()" id="playButton">▶</button>
@@ -45,11 +36,11 @@
       </div>
       <a href="https://open.spotify.com/playlist/5dfvOTGaqtRkqAu4gT67gi?si=rjdfE1HdTPiHLf_FN1EljA" target="_blank" class="spotify-icon">
         <i class="fab fa-spotify"></i>
-        <span class="spotify-hint">Klik Disini</span>
+        <span class="spotify-hint">playlist</span>
       </a>
       <audio id="audio" src="img/For Revenge - Serana (Official Lyric Video).mp3"></audio>
     </div>
-    
+
     <h1 class="name">RAIHAN FAHREL AKBAR</h1>
 
     <a href="https://goo.gl/maps/BsB42S88cQxTTZnbA" class="location-btn" target="_blank">
@@ -62,32 +53,36 @@
       </button>
       <div class="social-links" id="socialLinks">
         <a href="https://wa.me/qr/4ZLHO5QULSEGO1" class="social-icon whatsapp" target="_blank">
-          <i class="fab fa-whatsapp"></i>
-          <span class="social-tooltip">WhatsApp</span>
+          <i class="fab fa-whatsapp"></i><span class="social-tooltip">WhatsApp</span>
         </a>
         <a href="https://www.instagram.com/rafa_.2312/" class="social-icon instagram" target="_blank">
-          <i class="fab fa-instagram"></i>
-          <span class="social-tooltip">Instagram</span>
+          <i class="fab fa-instagram"></i><span class="social-tooltip">Instagram</span>
         </a>
         <a href="https://www.tiktok.com/@rafa231206" class="social-icon tiktok" target="_blank">
-          <i class="fab fa-tiktok"></i>
-          <span class="social-tooltip">TikTok</span>
+          <i class="fab fa-tiktok"></i><span class="social-tooltip">TikTok</span>
         </a>
         <a href="https://www.facebook.com/share" class="social-icon facebook" target="_blank">
-          <i class="fab fa-facebook-f"></i>
-          <span class="social-tooltip">Facebook</span>
+          <i class="fab fa-facebook-f"></i><span class="social-tooltip">Facebook</span>
         </a>
         <a href="https://x.com/Rafa_231206" class="social-icon twitter" target="_blank">
-          <i class="fab fa-twitter"></i>
-          <span class="social-tooltip">Twitter</span>
+          <i class="fab fa-twitter"></i><span class="social-tooltip">Twitter</span>
         </a>
       </div>
     </div>
 
-    <div class="username">
-      <acronym title="Raihan Fahrel, lahir tanggal 23 bulan 12" text-de>Rafa_2312</acronym>
+    <div class="username-container">
+      <button class="username" onclick="toggleUsernameInfo()">
+        <acronym title="Raihan Fahrel, lahir tanggal 23 bulan 12">Rafa_2312</acronym>
+      </button>
+      <div class="username-info" id="usernameInfo">
+        <p>Yo, Welcome di web pertama gue!.
+          <br />Cuma buat nunjukin sedikit tentang gue sama link medsos gue. Masih newbie banget nih belajar coding, jadi simpel dulu ya.
+          <br />Thanks udah mampir—jangan lupa follow !
+        </p>
+      </div>
     </div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
