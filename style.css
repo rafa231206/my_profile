@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/* Light Mode Styles */
+/*==================== VARIABLES ====================*/
 :root {
   --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   --card-bg: rgba(255, 255, 255, 0.9);
@@ -15,7 +15,6 @@
   --toggle-icon: #f39c12;
 }
 
-/* Dark Mode Styles */
 .dark-mode {
   --bg-gradient: linear-gradient(135deg, #1a1a1a 0%, #3d3d3d 100%);
   --card-bg: rgba(30, 30, 30, 0.9);
@@ -30,6 +29,7 @@
   --toggle-icon: #f1c40f;
 }
 
+/*==================== BASE ====================*/
 body {
   font-family: 'Poppins', sans-serif;
   background: var(--bg-gradient);
@@ -55,11 +55,12 @@ body {
   transition: transform 0.3s ease, background 0.5s ease;
   position: relative;
 }
+
 .profile-card:hover {
   transform: translateY(-5px);
 }
 
-/* New Dark/Light Mode Toggle */
+/*==================== MODE TOGGLE ====================*/
 .mode-toggle {
   position: absolute;
   top: 20px;
@@ -91,6 +92,7 @@ body {
   transform: scale(1.2);
 }
 
+/*==================== PROFILE ====================*/
 .profile-img {
   width: 150px;
   height: 150px;
@@ -105,6 +107,7 @@ body {
 .profile-img:hover {
   transform: scale(1.05);
 }
+
 .name {
   font-size: 1.8rem;
   font-weight: 700;
@@ -115,18 +118,25 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-.location-btn {
-  background: var(--location-btn);
-  color: white;
-  border: none;
+/*==================== BUTTONS ====================*/
+.location-btn,
+.social-toggle {
   padding: 10px 20px;
   border-radius: 50px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
+  color: white;
+  border: none;
   box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
 }
-.location-btn:hover {
+
+.location-btn {
+  background: var(--location-btn);
+}
+
+.location-btn:hover,
+.social-toggle:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
 }
@@ -137,21 +147,10 @@ body {
 
 .social-toggle {
   background: var(--social-toggle);
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 50px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(155, 89, 182, 0.3);
   margin-bottom: 15px;
 }
-.social-toggle:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(155, 89, 182, 0.4);
-}
 
+/*==================== SOCIAL ICONS ====================*/
 .social-links {
   display: none;
   flex-wrap: wrap;
@@ -174,257 +173,289 @@ body {
   position: relative;
   overflow: hidden;
 }
+
 .social-icon::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.2);
-    transition: all 0.3s ease;
-  }
-  
-  .social-icon:hover {
-    transform: translateY(-5px) scale(1.1);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  }
-  
-  .social-icon:hover::before {
-    left: 100%;
-  }
-  .social-tooltip {
-    position: absolute;
-    bottom: -40px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 12px;
-    opacity: 0;
-    transition: all 0.3s ease;
-    pointer-events: none;
-  }
-  
-  .social-icon:hover .social-tooltip {
-    opacity: 1;
-    bottom: -30px;
-  }
-  .whatsapp { background-color: #25D366; }
-  .instagram { background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D); }
-  .tiktok { background-color: #000000; }
-  .facebook { background-color: #3b5998; }
-  .twitter { background-color: #1DA1F2; }
-  .telegram { background-color: #0088cc; }
-  
-  .audio-player {
-    display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.7);
-    border-radius: 50px;
-    padding: 8px 15px;
-    margin: 20px auto;
-    max-width: 300px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  }
-  .play-btn {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--play-btn);
-    color: white;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-  }
-  
-  .play-btn:hover {
-    transform: scale(1.1);
-  }
-  
-  .track-info {
-    margin-left: 15px;
-    text-align: left;
-    flex-grow: 1;
-  }
-  .track-title {
-    font-weight: 600;
-    color: var(--text-color);
-    font-size: 0.95rem;
-  }
-  
-  .track-artist {
-    font-size: 0.8rem;
-    color: #7f8c8d;
-    opacity: 0.8;
-  }
-  
-  .username {
-    display: inline-block;
-    background: var(--username-bg);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 50px;
-    font-weight: 500;
-    margin-top: 10px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(155, 89, 182, 0.3);
-  }
-  .username:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(155, 89, 182, 0.4);
-  }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  
-  @media (max-width: 480px) {
-    .profile-card {
-      padding: 20px;
-    }
-        
-    .profile-img {
-        width: 120px;
-        height: 120px;
-      }
-    
-      .name {
-        font-size: 1.5rem;
-      }
-    
-      .social-links {
-        flex-wrap: wrap;
-      }
-    }
-    
-    /* Mode Selection Screen */
-    .mode-selection {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.9);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      transition: opacity 0.5s ease;
-    }
-    
-    .mode-selection h2 {
-      color: white;
-      font-size: 2rem;
-      margin-bottom: 2rem;
-      text-align: center;
-    }
-    
-    .mode-options {
-      display: flex;
-      gap: 2rem;
-    }
-    
-    .mode-btn {
-      padding: 1.5rem 2rem;
-      border-radius: 15px;
-      font-size: 1.2rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 150px;
-      height: 150px;
-    }
-    
-    .light-mode-btn {
-      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-      color: #2c3e50;
-    }
-    
-    .dark-mode-btn {
-      background: linear-gradient(135deg, #1a1a1a 0%, #3d3d3d 100%);
-      color: white;
-    }
-    
-    .mode-btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    }
-    
-    .mode-btn i {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    acronym {
-      text-decoration: none; /* Menghilangkan garis bawah */
-      border-bottom: none;   /* Menghilangkan border bawah titik-titik */
-    }
-    /* Spotify Icon Styling */
-  .spotify-icon {
-    margin-left: 10px; /* Memberi sedikit jarak dari info lagu */
-    color: #1DB954; /* Warna hijau Spotify */
-    font-size: 1.8rem; /* Ukuran ikon */
-    transition: transform 0.3s ease, color 0.3s ease;
-    display: flex; /* Untuk memastikan ikon berada di tengah jika ada padding */
-    align-items: center; /* Pusatkan ikon secara vertikal */
-    justify-content: center; /* Pusatkan ikon secara horizontal */
-  }
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
 
-  .spotify-icon:hover {
-    transform: scale(1.2); /* Efek zoom saat di-hover */
-    color: #1ed760; /* Warna sedikit lebih terang saat di-hover */
-  }
+.social-icon:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
 
-  /* Sesuaikan tata letak audio player agar ikon Spotify bisa di samping */
-  .audio-player {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Untuk menyebarkan elemen secara merata */
-    background: rgba(255, 255, 255, 0.7);
-    border-radius: 50px;
-    padding: 8px 15px;
-    margin: 20px auto;
-    max-width: 300px;
-    box-shadow: 0 4px 10px var(--shadow-color); /* Menggunakan variabel shadow-color */
-  }
+.social-icon:hover::before {
+  left: 100%;
+}
 
-  .audio-player .track-info {
-    flex-grow: 1; /* Memastikan info lagu mengambil ruang yang tersedia */
-    margin-right: 10px; /* Memberi jarak antara info lagu dan ikon Spotify */
-  }
-/* Style untuk tulisan "Klik Disini" */
+.social-tooltip {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.social-icon:hover .social-tooltip {
+  opacity: 1;
+  bottom: -30px;
+}
+
+.whatsapp { background-color: #25D366; }
+.instagram { background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D); }
+.tiktok { background-color: #000000; }
+.facebook { background-color: #3b5998; }
+.twitter { background-color: #1DA1F2; }
+.telegram { background-color: #0088cc; }
+
+/*==================== AUDIO PLAYER ====================*/
+.audio-player {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50px;
+  padding: 8px 15px;
+  margin: 20px auto;
+  max-width: 300px;
+  box-shadow: 0 4px 10px var(--shadow-color);
+}
+
+.play-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--play-btn);
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.play-btn:hover {
+  transform: scale(1.1);
+}
+
+.track-info {
+  flex-grow: 1;
+  margin-left: 15px;
+  text-align: left;
+}
+
+.track-title {
+  font-weight: 600;
+  color: var(--text-color);
+  font-size: 0.95rem;
+}
+
+.track-artist {
+  font-size: 0.8rem;
+  color: #7f8c8d;
+  opacity: 0.8;
+}
+
+.spotify-icon {
+  margin-left: 10px;
+  color: #1DB954;
+  font-size: 1.8rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.spotify-icon:hover {
+  transform: scale(1.2);
+  color: #1ed760;
+}
+
 .spotify-hint {
-  display: none; /* Sembunyikan tulisan awalnya */
+  display: none;
   font-size: 0.8rem;
   font-weight: 300;
   letter-spacing: 1px;
   font-family: 'Poppins', sans-serif;
   color: white;
-  background-color: rgba(29, 185, 84, 0.9); /* Warna hijau Spotify */
+  background-color: rgba(29, 185, 84, 0.9);
   padding: 5px 8px;
   border-radius: 12px;
-  position: absolute; /* Posisikan absolut terhadap parent */
-  white-space: nowrap; /* Mencegah tulisan terpotong */
-  transform: translateY(-40px) translateX(-25px); /* Atur posisi tulisan */
-  pointer-events: none; /* Mencegah tulisan mengganggu hover */
-  opacity: 0; /* Mulai dengan opacity 0 */
-  transition: opacity 0.3s ease, transform 0.3s ease; /* Efek transisi */
+  position: absolute;
+  white-space: nowrap;
+  transform: translateY(-40px) translateX(-25px);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .spotify-icon:hover .spotify-hint {
-  display: block; /* Muncul saat hover */
-  opacity: 1; /* Animasi fade-in */
-  transform: translateY(-45px) translateX(-25px); /* Animasi naik sedikit */
+  display: block;
+  opacity: 1;
+  transform: translateY(-45px) translateX(-25px);
+}
+
+/*==================== USERNAME ====================*/
+.username-container {
+  margin-top: 10px;
+  position: relative;
+}
+
+.username {
+  display: inline-block;
+  background: var(--username-bg);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(155, 89, 182, 0.3);
+  border: none;
+}
+
+.username:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(155, 89, 182, 0.4);
+}
+
+.username-info {
+  display: none;
+  background: var(--card-bg);
+  color: var(--text-color);
+  padding: 10px 15px;
+  border-radius: 10px;
+  margin-top: 10px;
+  box-shadow: 0 5px 15px var(--shadow-color);
+  animation: fadeIn 0.5s ease;
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.username-info p {
+  margin: 0;
+}
+.username acronym {
+  text-decoration: none;
+  background: none;
+}
+
+/*==================== MODE SELECTION ====================*/
+.mode-selection {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 0.5s ease;
+  background: linear-gradient(135deg, #1a2a6c, #9d2424, #f9c045);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+}
+
+.mode-selection h2 {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.mode-options {
+  display: flex;
+  gap: 2rem;
+}
+
+.mode-btn {
+  padding: 1.5rem 2rem;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 150px;
+}
+
+.light-mode-btn {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  color: #2c3e50;
+}
+
+.dark-mode-btn {
+  background: linear-gradient(135deg, #1a1a1a 0%, #3d3d3d 100%);
+  color: white;
+}
+
+.mode-btn:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #e0eafc, #cfdef3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.mode-btn i {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/*==================== ANIMATIONS ====================*/
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/*==================== RESPONSIVE ====================*/
+@media (max-width: 480px) {
+  .profile-card {
+    padding: 20px;
+  }
+
+  .profile-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .name {
+    font-size: 1.5rem;
+  }
+
+  .social-links {
+    flex-wrap: wrap;
+  }
 }
