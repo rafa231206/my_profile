@@ -1,54 +1,43 @@
-// Mode Selection Functionality
 function selectMode(mode) {
-  if (mode === 'dark') {
-    document.body.classList.add('dark-mode');
-    document.getElementById('toggleIcon').className = 'fas fa-sun';
-  } else {
-    document.body.classList.remove('dark-mode');
-    document.getElementById('toggleIcon').className = 'fas fa-moon';
-  }
+  const profileImg = document.querySelector('.profile-img');
+  const modeSelection = document.getElementById('modeSelection');
+  const profileCard = document.getElementById('profileCard');
 
-  // // Save preference to localStorage
-  // localStorage.setItem('themePreference', mode);
+  modeSelection.style.transition = 'opacity 0.5s ease';
+  modeSelection.style.opacity = '0';
 
-  // Hide mode selection and show profile card
-  document.getElementById('modeSelection').style.opacity = '0';
   setTimeout(() => {
-    document.getElementById('modeSelection').style.display = 'none';
-    document.getElementById('profileCard').style.display = 'block';
+    modeSelection.style.display = 'none';
+    document.body.classList.toggle('dark-mode', mode === 'dark');
+    profileCard.style.display = 'block';
+    document.getElementById('toggleIcon').className = mode === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+    profileImg.src = mode === 'dark'
+      ? 'img/506986091_3639265676377448_6505629332826042357_n.jpg'
+      : 'img/quality_restoration_20250330050655089.jpg';
   }, 500);
 }
 
-// New Theme Toggle Function
 function toggleTheme() {
   const body = document.body;
   const toggleIcon = document.getElementById('toggleIcon');
-  
-  if (body.classList.contains('dark-mode')) {
-    body.classList.remove('dark-mode');
-    toggleIcon.className = 'fas fa-moon';
-    localStorage.setItem('themePreference', 'light');
-  } else {
-    body.classList.add('dark-mode');
-    toggleIcon.className = 'fas fa-sun';
-    localStorage.setItem('themePreference', 'dark');
-  }
+  const profileImg = document.querySelector('.profile-img');
+
+  const isDark = body.classList.toggle('dark-mode');
+  toggleIcon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+  localStorage.setItem('themePreference', isDark ? 'dark' : 'light');
+  profileImg.src = isDark
+    ? 'img/506986091_3639265676377448_6505629332826042357_n.jpg'
+    : 'img/quality_restoration_20250330050655089.jpg';
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Reset tampilan mode seleksi
-  const modeSelection = document.getElementById('modeSelection');
-  const profileCard = document.getElementById('profileCard');
-  
-  modeSelection.style.opacity = '1';
-  modeSelection.style.display = 'flex';
-  profileCard.style.display = 'none'; // Sembunyikan profil sampai mode dipilih
+  document.getElementById('modeSelection').style.opacity = '1';
+  document.getElementById('modeSelection').style.display = 'flex';
+  document.getElementById('profileCard').style.display = 'none';
 });
 
-// Audio Player Functionality
 const audio = document.getElementById("audio");
 const playButton = document.getElementById("playButton");
-const socialLinks = document.getElementById("socialLinks");
 
 function togglePlay() {
   if (audio.paused) {
@@ -65,5 +54,11 @@ audio.onerror = () => {
 };
 
 function toggleSocial() {
-  socialLinks.style.display = (socialLinks.style.display === 'flex') ? 'none' : 'flex';
+  const socialLinks = document.getElementById("socialLinks");
+  socialLinks.style.display = socialLinks.style.display === 'flex' ? 'none' : 'flex';
+}
+
+function toggleUsernameInfo() {
+  const usernameInfo = document.getElementById('usernameInfo');
+  usernameInfo.style.display = usernameInfo.style.display === 'block' ? 'none' : 'block';
 }
