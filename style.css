@@ -367,3 +367,64 @@ body {
       font-size: 2.5rem;
       margin-bottom: 1rem;
     }
+    acronym {
+      text-decoration: none; /* Menghilangkan garis bawah */
+      border-bottom: none;   /* Menghilangkan border bawah titik-titik */
+    }
+    /* Spotify Icon Styling */
+  .spotify-icon {
+    margin-left: 10px; /* Memberi sedikit jarak dari info lagu */
+    color: #1DB954; /* Warna hijau Spotify */
+    font-size: 1.8rem; /* Ukuran ikon */
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: flex; /* Untuk memastikan ikon berada di tengah jika ada padding */
+    align-items: center; /* Pusatkan ikon secara vertikal */
+    justify-content: center; /* Pusatkan ikon secara horizontal */
+  }
+
+  .spotify-icon:hover {
+    transform: scale(1.2); /* Efek zoom saat di-hover */
+    color: #1ed760; /* Warna sedikit lebih terang saat di-hover */
+  }
+
+  /* Sesuaikan tata letak audio player agar ikon Spotify bisa di samping */
+  .audio-player {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Untuk menyebarkan elemen secara merata */
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50px;
+    padding: 8px 15px;
+    margin: 20px auto;
+    max-width: 300px;
+    box-shadow: 0 4px 10px var(--shadow-color); /* Menggunakan variabel shadow-color */
+  }
+
+  .audio-player .track-info {
+    flex-grow: 1; /* Memastikan info lagu mengambil ruang yang tersedia */
+    margin-right: 10px; /* Memberi jarak antara info lagu dan ikon Spotify */
+  }
+/* Style untuk tulisan "Klik Disini" */
+.spotify-hint {
+  display: none; /* Sembunyikan tulisan awalnya */
+  font-size: 0.8rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  background-color: rgba(29, 185, 84, 0.9); /* Warna hijau Spotify */
+  padding: 5px 8px;
+  border-radius: 12px;
+  position: absolute; /* Posisikan absolut terhadap parent */
+  white-space: nowrap; /* Mencegah tulisan terpotong */
+  transform: translateY(-40px) translateX(-25px); /* Atur posisi tulisan */
+  pointer-events: none; /* Mencegah tulisan mengganggu hover */
+  opacity: 0; /* Mulai dengan opacity 0 */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Efek transisi */
+}
+
+.spotify-icon:hover .spotify-hint {
+  display: block; /* Muncul saat hover */
+  opacity: 1; /* Animasi fade-in */
+  transform: translateY(-45px) translateX(-25px); /* Animasi naik sedikit */
+}
