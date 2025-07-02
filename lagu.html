@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Our Special Playlist</title>
+  <!-- Tailwind CSS CDN for utility classes -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="lagu_style.css" />
+</head>
+<body>
+  <main class="flex flex-col items-center min-h-screen p-4 pb-32 md:pb-16">
+    <!-- Playlist Cover Section -->
+    <section class="cover-container" aria-label="Playlist cover image">
+      <img src="img/pp.png" alt="Woman wearing white long dress and light purple hijab standing with palms together greeting gesture in front of house with bushes" />
+    </section>
+  
+    <!-- Playlist Title -->
+    <h1 class="playlist-title">this playlist is only ours</h1>
+  
+    <!-- Profile Section -->
+    <div class="profile" aria-label="Playlist profile">
+      <div class="profile-icon" aria-hidden="true">R</div>
+      <span>Raihan Fahrel Akbar</span>
+    </div>
+  
+    <!-- Main Play Button -->
+    <div class="playlist-controls" role="group" aria-label="Playlist controls">
+      <!-- Tombol Kembali Lagu -->
+      <button class="btn-icon prev" title="Previous song" aria-label="Previous song">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" stroke="none" width="28" height="28" aria-hidden="true">
+          <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/>
+        </svg>
+      </button>
+      <!-- Main Play Button -->
+      <button class="btn-icon play" title="Play playlist" aria-label="Play playlist">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" stroke="none" width="28" height="28" aria-hidden="true">
+          <path d="M8 5v14l11-7z" />
+        </svg>
+      </button>
+      <!-- Tombol Next Lagu -->
+      <button class="btn-icon next" title="Next song" aria-label="Next song">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" stroke="none" width="28" height="28" aria-hidden="true">
+          <path d="M18 6h-2v12h2zm-9.5 6l8.5-6v12z"/>
+        </svg>
+      </button>
+    </div>
+    <!-- Playlist Items Section -->
+    <section class="playlist" aria-label="Songs in playlist">
+      <!-- Song 1 -->
+      <article class="playlist-item" tabindex="0" aria-current="false" aria-label="Somebody's Pleasure by Aziz Hendra" data-src="lagu/y2meta.vip - Aziz Hedra - Somebody s Pleasure (Extended Version) (320 KBps).mp3">
+        <img src="img/somebody.jpg" alt="Album cover showing a person sitting in a dim room near window, greenish theme" />
+        <div class="track-info">
+          <span class="track-title">Somebody's Pleasure</span>
+          <span class="track-artist">Aziz Hendra</span>
+        </div>
+        <div class="track-controls" aria-hidden="true">
+          <div class="owner-badge" title="Owner Song">A</div>
+          <button class="play-pause-btn" title="Play/Pause">
+            <svg class="play-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            <svg class="pause-icon hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20">
+              <rect x="6" y="4" width="4" height="16"></rect>
+              <rect x="14" y="4" width="4" height="16"></rect>
+            </svg>
+          </button>
+        </div>
+      </article>
+
+      <!-- Song 2 -->
+      <article class="playlist-item" tabindex="0" aria-current="false" aria-label="Wish You Were Here by Neck Deep" data-src="lagu/y2meta.vip - Neck Deep - Wish You Were Here (320 KBps).mp3">
+        <img src="img/Wish You Were Here.jpg" alt="Minimalist album artwork with hand-drawn house and plants on cream background" />
+        <div class="track-info">
+          <span class="track-title">Wish You Were Here</span>
+          <span class="track-artist">Neck Deep</span>
+        </div>
+        <div class="track-controls" aria-hidden="true">
+          <div class="owner-badge" title="Owner Song">N</div>
+          <button class="play-pause-btn" title="Play/Pause">
+            <svg class="play-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            <svg class="pause-icon hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20">
+              <rect x="6" y="4" width="4" height="16"></rect>
+              <rect x="14" y="4" width="4" height="16"></rect>
+            </svg>
+          </button>
+        </div>
+      </article>
+
+      <!-- Song 3 -->
+      <article class="playlist-item" tabindex="0" aria-current="false" aria-label="You'll be in my heart by NIKI" data-src="lagu/y2meta.vip - NIKI - You ll be in my heart (Spotify Single) Music Lyric Video (320 KBps).mp3">
+        <img src="img/You ll be in my heart.jpg" alt="Old family photo showing child sitting in room with a cake, nostalgic mood" />
+        <div class="track-info">
+          <span class="track-title">You'll be in my heart</span>
+          <span class="track-artist">NIKI</span>
+        </div>
+        <div class="track-controls" aria-hidden="true">
+          <div class="owner-badge" title="Owner Song">N</div>
+          <button class="play-pause-btn" title="Play/Pause">
+            <svg class="play-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            <svg class="pause-icon hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20">
+              <rect x="6" y="4" width="4" height="16"></rect>
+              <rect x="14" y="4" width="4" height="16"></rect>
+            </svg>
+          </button>
+        </div>
+      </article>
+
+      <!-- Song 4 -->
+      <article class="playlist-item" tabindex="0" aria-current="false" aria-label="Where We Are by One Direction" data-src="lagu/y2meta.vip - Where We Are - One Direction Lyrics Tiktok Version (320 KBps).mp3">
+        <img src="img/Where We Are.jpg" alt="Casual photo of group sitting on cozy living room furniture with relaxed vibe" />
+        <div class="track-info">
+          <span class="track-title">Where We Are</span>
+          <span class="track-artist">One Direction</span>
+        </div>
+        <div class="track-controls" aria-hidden="true">
+          <div class="owner-badge" title="Owner Song">O</div>
+          <button class="play-pause-btn" title="Play/Pause">
+            <svg class="play-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            <svg class="pause-icon hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20">
+              <rect x="6" y="4" width="4" height="16"></rect>
+              <rect x="14" y="4" width="4" height="16"></rect>
+            </svg>
+          </button>
+        </div>
+      </article>
+
+      <!-- Song 5 -->
+      <article class="playlist-item" tabindex="0" aria-current="false" aria-label="Mangu by Fourtwnty" data-src="lagu/y2meta.vip - Fourtwnty - Mangu ft. Charita Utami ( Official Audio ) (320 KBps).mp3">
+        <img src="img/Mangu.jpg" alt="Old family photo showing child sitting in room with a cake, nostalgic mood" />
+        <div class="track-info">
+          <span class="track-title">Mangu</span>
+          <span class="track-artist">Fourtwnty</span>
+        </div>
+        <div class="track-controls" aria-hidden="true">
+          <div class="owner-badge" title="Owner Song">F</div>
+          <button class="play-pause-btn" title="Play/Pause">
+            <svg class="play-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            <svg class="pause-icon hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20">
+              <rect x="6" y="4" width="4" height="16"></rect>
+              <rect x="14" y="4" width="4" height="16"></rect>
+            </svg>
+          </button>
+        </div>
+      </article>
+
+      <!-- Song 6 -->
+      <article class="playlist-item" tabindex="0" aria-current="true" aria-label="Nina by Feast" data-src="lagu/y2meta.vip - Feast - Nina (Official Lyric Video) (320 KBps).mp3">
+        <img src="img/Nina.jpg" alt="Album cover with abstract blue-green shapes with red cursive title text 'Mangu'" />
+        <div class="track-info">
+          <span class="track-title">Nina</span>
+          <span class="track-artist">Feast</span>
+        </div>
+        <div class="track-controls" aria-hidden="true">
+          <div class="owner-badge" title="Owner Song">F</div>
+          <button class="play-pause-btn" title="Play/Pause">
+            <svg class="play-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            <svg class="pause-icon hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20">
+              <rect x="6" y="4" width="4" height="16"></rect>
+              <rect x="14" y="4" width="4" height="16"></rect>
+            </svg>
+          </button>
+        </div>
+      </article>
+      <!-- Song 7 -->
+      <article class="playlist-item" tabindex="0" aria-current="true" aria-label="Sadrah by for Revenge" data-src="lagu/y2meta.vip - for Revenge - Sadrah (Official Lyric Video).mp3">
+        <img src="img/Sadrah.jpg" alt="Album cover with abstract blue-green shapes with red cursive title text 'Mangu'" />
+        <div class="track-info">
+          <span class="track-title">Sadrah</span>
+          <span class="track-artist">for Revenge</span>
+        </div>
+        <div class="track-controls" aria-hidden="true">
+          <div class="owner-badge" title="Owner Song">F</div>
+          <button class="play-pause-btn" title="Play/Pause">
+            <svg class="play-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            <svg class="pause-icon hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20">
+              <rect x="6" y="4" width="4" height="16"></rect>
+              <rect x="14" y="4" width="4" height="16"></rect>
+            </svg>
+          </button>
+        </div>
+      </article>
+      <!-- Song 8 -->
+      <article class="playlist-item" tabindex="0" aria-current="true" aria-label="Bunga Abadi by Rio Clappy" data-src="lagu/y2meta.vip - Rio Clappy - Bunga Abadi (Official Lyric Video) (320 KBps).mp3">
+        <img src="img/Bunga Abadi.jpg" alt="Album cover with abstract blue-green shapes with red cursive title text 'Mangu'" />
+        <div class="track-info">
+          <span class="track-title">Bunga Abadi</span>
+          <span class="track-artist">Rio Clappy</span>
+        </div>
+        <div class="track-controls" aria-hidden="true">
+          <div class="owner-badge" title="Owner Song">R</div>
+          <button class="play-pause-btn" title="Play/Pause">
+            <svg class="play-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            <svg class="pause-icon hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20">
+              <rect x="6" y="4" width="4" height="16"></rect>
+              <rect x="14" y="4" width="4" height="16"></rect>
+            </svg>
+          </button>
+        </div>
+      </article>
+      <!-- Song 9 -->
+      <article class="playlist-item" tabindex="0" aria-current="true" aria-label="L by Hal" data-src="lagu/y2mate.com - Hal  L Lirik.mp3">
+        <img src="img/L.jpg" alt="Album cover with abstract blue-green shapes with red cursive title text 'Mangu'" />
+        <div class="track-info">
+          <span class="track-title">L</span>
+          <span class="track-artist">Hal</span>
+        </div>
+        <div class="track-controls" aria-hidden="true">
+          <div class="owner-badge" title="Owner Song">H</div>
+          <button class="play-pause-btn" title="Play/Pause">
+            <svg class="play-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            <svg class="pause-icon hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20">
+              <rect x="6" y="4" width="4" height="16"></rect>
+              <rect x="14" y="4" width="4" height="16"></rect>
+            </svg>
+          </button>
+        </div>
+      </article>
+      <!-- Song 10 -->
+      <article class="playlist-item" tabindex="0" aria-current="true" aria-label="terima kasih by Hal" data-src="lagu/y2meta.vip - HAL - terima kasih (Official Lyric Video).mp3">
+        <img src="img/terima kasih.jpg" alt="Album cover with abstract blue-green shapes with red cursive title text 'Mangu'" />
+        <div class="track-info">
+          <span class="track-title">terima kasih</span>
+          <span class="track-artist">Hal</span>
+        </div>
+        <div class="track-controls" aria-hidden="true">
+          <div class="owner-badge" title="Owner Song">H</div>
+          <button class="play-pause-btn" title="Play/Pause">
+            <svg class="play-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            <svg class="pause-icon hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20">
+              <rect x="6" y="4" width="4" height="16"></rect>
+              <rect x="14" y="4" width="4" height="16"></rect>
+            </svg>
+          </button>
+        </div>
+      </article>
+      <!-- Song 11 -->
+      <article class="playlist-item" tabindex="0" aria-current="true" aria-label="Serana by For Revenge" data-src="lagu/For Revenge - Serana (Official Lyric Video).mp3">
+        <img src="img/Serana.jpg" alt="Album cover with abstract blue-green shapes with red cursive title text 'Mangu'" />
+        <div class="track-info">
+          <span class="track-title">Serana</span>
+          <span class="track-artist">For Revenge</span>
+        </div>
+        <div class="track-controls" aria-hidden="true">
+          <div class="owner-badge" title="Owner Song">F</div>
+          <button class="play-pause-btn" title="Play/Pause">
+            <svg class="play-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            <svg class="pause-icon hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20">
+              <rect x="6" y="4" width="4" height="16"></rect>
+              <rect x="14" y="4" width="4" height="16"></rect>
+            </svg>
+          </button>
+        </div>
+      </article>
+      <!-- Song 12 -->
+      <article class="playlist-item" tabindex="0" aria-current="true" aria-label="Bunga Maaf by The Lantis" data-src="lagu/y2meta.vip - The Lantis - Bunga Maaf (Visualizer) (320 KBps).mp3">
+        <img src="img/Bunga Maaf.jpg" alt="Album cover with abstract blue-green shapes with red cursive title text 'Mangu'" />
+        <div class="track-info">
+          <span class="track-title">Bunga Maaf</span>
+          <span class="track-artist">The Lantis</span>
+        </div>
+        <div class="track-controls" aria-hidden="true">
+          <div class="owner-badge" title="Owner Song">T</div>
+          <button class="play-pause-btn" title="Play/Pause">
+            <svg class="play-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            <svg class="pause-icon hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20">
+              <rect x="6" y="4" width="4" height="16"></rect>
+              <rect x="14" y="4" width="4" height="16"></rect>
+            </svg>
+          </button>
+        </div>
+      </article>
+      <!-- Song 13 -->
+      <article class="playlist-item" tabindex="0" aria-current="true" aria-label="Teruntuk Mia by Nuh..." data-src="lagu/y2meta.vip - Nuh... - Teruntuk Mia (Official Audio) (320 KBps).mp3">
+        <img src="img/Teruntuk Mia.jpg" alt="Album cover with abstract blue-green shapes with red cursive title text 'Mangu'" />
+        <div class="track-info">
+          <span class="track-title">Teruntuk Mia</span>
+          <span class="track-artist">Nuh...</span>
+        </div>
+        <div class="track-controls" aria-hidden="true">
+          <div class="owner-badge" title="Owner Song">N</div>
+          <button class="play-pause-btn" title="Play/Pause">
+            <svg class="play-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            <svg class="pause-icon hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20">
+              <rect x="6" y="4" width="4" height="16"></rect>
+              <rect x="14" y="4" width="4" height="16"></rect>
+            </svg>
+          </button>
+        </div>
+      </article>
+      <!-- Song 14 -->
+      <article class="playlist-item" tabindex="0" aria-current="true" aria-label="Taruh by Nadin Amizah" data-src="lagu/y2meta.vip - Nadin Amizah - Taruh (Official Lyric Video).mp3">
+        <img src="img/Taruh.jpg" alt="Album cover with abstract blue-green shapes with red cursive title text 'Mangu'" />
+        <div class="track-info">
+          <span class="track-title">Taruh</span>
+          <span class="track-artist">Nadin Amizah</span>
+        </div>
+        <div class="track-controls" aria-hidden="true">
+          <div class="owner-badge" title="Owner Song">N</div>
+          <button class="play-pause-btn" title="Play/Pause">
+            <svg class="play-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            <svg class="pause-icon hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20">
+              <rect x="6" y="4" width="4" height="16"></rect>
+              <rect x="14" y="4" width="4" height="16"></rect>
+            </svg>
+          </button>
+        </div>
+      </article>
+      <!-- Song 15 -->
+      <article class="playlist-item" tabindex="0" aria-current="true" aria-label="Penyangkalan by for Revenge" data-src="lagu/y2meta.vip - for Revenge - Penyangkalan (Official Lyric Video) (320 KBps).mp3">
+        <img src="img/Penyangkalan.jpg" alt="Album cover with abstract blue-green shapes with red cursive title text 'Mangu'" />
+        <div class="track-info">
+          <span class="track-title">Penyangkalan</span>
+          <span class="track-artist">for Revenge</span>
+        </div>
+        <div class="track-controls" aria-hidden="true">
+          <div class="owner-badge" title="Owner Song">F</div>
+          <button class="play-pause-btn" title="Play/Pause">
+            <svg class="play-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            <svg class="pause-icon hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20">
+              <rect x="6" y="4" width="4" height="16"></rect>
+              <rect x="14" y="4" width="4" height="16"></rect>
+            </svg>
+          </button>
+        </div>
+      </article>
+      <!-- Song 16 -->
+      <article class="playlist-item" tabindex="0" aria-current="true" aria-label="bergema sampai selamanya by Nadhif Basalamah" data-src="lagu/y2meta.vip - Nadhif Basalamah - bergema sampai selamanya (Official Lyric Video) (320 KBps).mp3">
+        <img src="img/bergema sampai selamanya.jpg" alt="Album cover with abstract blue-green shapes with red cursive title text 'Mangu'" />
+        <div class="track-info">
+          <span class="track-title">bergema sampai selamanya</span>
+          <span class="track-artist">Nadhif Basalamah</span>
+        </div>
+        <div class="track-controls" aria-hidden="true">
+          <div class="owner-badge" title="Owner Song">N</div>
+          <button class="play-pause-btn" title="Play/Pause">
+            <svg class="play-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            <svg class="pause-icon hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20">
+              <rect x="6" y="4" width="4" height="16"></rect>
+              <rect x="14" y="4" width="4" height="16"></rect>
+            </svg>
+          </button>
+        </div>
+      </article>
+      <!-- Song 17 -->
+      <article class="playlist-item" tabindex="0" aria-current="true" aria-label="Kembali Pulang by Feby Putri" data-src="lagu/Kembali Pulang - Suara Kayu Feat. Feby Putri (Official Music Video).mp3">
+        <img src="img/Kembali Pulang.jpg" alt="Album cover with abstract blue-green shapes with red cursive title text 'Mangu'" />
+        <div class="track-info">
+          <span class="track-title">Kembali Pulang</span>
+          <span class="track-artist">Feby Putri</span>
+        </div>
+        <div class="track-controls" aria-hidden="true">
+          <div class="owner-badge" title="Owner Song">F</div>
+          <button class="play-pause-btn" title="Play/Pause">
+            <svg class="play-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            <svg class="pause-icon hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20">
+              <rect x="6" y="4" width="4" height="16"></rect>
+              <rect x="14" y="4" width="4" height="16"></rect>
+            </svg>
+          </button>
+        </div>
+      </article>
+      <!-- Song 18 -->
+      <article class="playlist-item" tabindex="0" aria-current="true" aria-label="Resah Jadi Luka by Daun Jatuh" data-src="lagu/y2meta.vip - Daun Jatuh - Resah Jadi Luka (Official Audio) (320 KBps).mp3">
+        <img src="img/Resah Jadi Luka.png" alt="Album cover with abstract blue-green shapes with red cursive title text 'Mangu'" />
+        <div class="track-info">
+          <span class="track-title">Resah Jadi Luka</span>
+          <span class="track-artist">Daun Jatuh</span>
+        </div>
+        <div class="track-controls" aria-hidden="true">
+          <div class="owner-badge" title="Owner Song">D</div>
+          <button class="play-pause-btn" title="Play/Pause">
+            <svg class="play-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            <svg class="pause-icon hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20">
+              <rect x="6" y="4" width="4" height="16"></rect>
+              <rect x="14" y="4" width="4" height="16"></rect>
+            </svg>
+          </button>
+        </div>
+      </article>
+      <!-- Song 19 -->
+      <article class="playlist-item" tabindex="0" aria-current="true" aria-label="Beranjak Dewasa by Nadin Amizah" data-src="lagu/y2meta.vip - Nadin Amizah - Beranjak Dewasa (Official Lyric Video) (320 KBps).mp3">
+        <img src="img/Beranjak Dewasa.jpg" alt="Album cover with abstract blue-green shapes with red cursive title text 'Mangu'" />
+        <div class="track-info">
+          <span class="track-title">Beranjak Dewasa</span>
+          <span class="track-artist">Nadin Amizah</span>
+        </div>
+        <div class="track-controls" aria-hidden="true">
+          <div class="owner-badge" title="Owner Song">N</div>
+          <button class="play-pause-btn" title="Play/Pause">
+            <svg class="play-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            <svg class="pause-icon hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20">
+              <rect x="6" y="4" width="4" height="16"></rect>
+              <rect x="14" y="4" width="4" height="16"></rect>
+            </svg>
+          </button>
+        </div>
+      </article>
+    </section>
+  
+    <!-- Now Playing Bar -->
+    <div id="now-playing" class="fixed bottom-4 inset-x-0 flex justify-center z-50">
+      <div class="bg-black/80 text-white text-sm font-medium px-6 py-2 rounded-full shadow-md animate-slide-up hidden">
+        <span id="song-title"></span> · <span id="song-artist"></span>
+      </div>
+    </div>
+  </main>
+
+  <!-- Audio Element -->
+  <audio id="global-audio" preload="auto"></audio>
+  <!-- JavaScript for player functionality -->
+  <script src="lagu_script.js"></script>
+</body>
+</html>
