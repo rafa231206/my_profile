@@ -9,6 +9,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
+  
   <div class="mode-selection" id="modeSelection">
     <h2>Pilih Mode Tampilan</h2>
     <div class="mode-options">
@@ -22,6 +23,13 @@
   </div>
 
   <div class="profile-card" id="profileCard" style="display: none;">
+    <!-- Tombol Game di pojok kiri atas dalam kotak profile -->
+    <button id="gameButton"
+    class="absolute top-4 left-4 px-3 py-1 rounded-md font-semibold shadow-md z-30
+          bg-black text-white dark:bg-white dark:text-black hover:scale-105 transition-all"
+    onclick="window.location.href='https://rafa231206.github.io/SkyboundLovers/'">
+    🎮 Game
+    </button>
     <div class="mode-toggle" id="modeToggle" onclick="toggleTheme()">
       <i class="fas fa-moon" id="toggleIcon"></i>
     </div>
@@ -52,7 +60,7 @@
         <i class="fas fa-share-alt"></i> Social Media
       </button>
       <div class="social-links" id="socialLinks">
-        <a href="https://wa.me/6285184983950" class="social-icon whatsapp" target="_blank">
+        <a href="https://wa.me/qr/4ZLHO5QULSEGO1" class="social-icon whatsapp" target="_blank">
           <i class="fab fa-whatsapp"></i><span class="social-tooltip">WhatsApp</span>
         </a>
         <a href="https://www.instagram.com/rafa_.2312/" class="social-icon instagram" target="_blank">
