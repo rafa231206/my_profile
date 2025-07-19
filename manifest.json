@@ -1,0 +1,22 @@
+{
+    "name": "Profile Pribadi Rafa",
+    "short_name": "Rafa Profile",
+    "description": "Profil pribadi Raihan Fahrel Akbar",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#f5f7fa",
+    "theme_color": "#3498db",
+    "icons": [
+      {
+        "src": "/img/icons/icon-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "/img/icons/icon-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }
+  
