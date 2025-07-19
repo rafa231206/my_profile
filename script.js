@@ -116,3 +116,24 @@ function toggleUsernameInfo() {
               });
           });
         }
+        let deferredPrompt;
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+          e.preventDefault();
+          deferredPrompt = e;
+        
+          // Tampilkan tombol khusus jika mau
+          const installBtn = document.getElementById('installBtn');
+          installBtn.style.display = 'block';
+        
+          installBtn.addEventListener('click', () => {
+            deferredPrompt.prompt();
+            deferredPrompt.userChoice.then(choice => {
+              if (choice.outcome === 'accepted') {
+                console.log('PWA installed');
+              }
+              deferredPrompt = null;
+            });
+          });
+        });
+        
