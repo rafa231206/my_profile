@@ -1,43 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profil Pribadi Raihan Fahrel Akbar - Rafa_2312</title> <!-- Judul yang lebih deskriptif -->
+    <meta name="description" content="Profil pribadi Raihan Fahrel Akbar (Rafa_2312) - Temukan informasi, media sosial, dan kontak di sini.">
+    <meta name="keywords" content="Raihan Fahrel Akbar, Rafa_2312, profil pribadi, media sosial, kontak, Lumajang, Yosowilangun">
+    <meta name="author" content="Raihan Fahrel Akbar">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/img/icons/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/img/icons/favicon.ico" type="image/x-icon">
+    <!-- Untuk ikon yang lebih modern (misal: PNG) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/icons/favicon-16x16.png">
+
+    <!-- Open Graph / Social Media Tags (Opsional, tapi bagus untuk sharing) -->
+    <meta property="og:title" content="Profil Pribadi Raihan Fahrel Akbar">
+    <meta property="og:description" content="Temukan informasi, media sosial, dan kontak Raihan Fahrel Akbar (Rafa_2312) di sini.">
+    <meta property="og:image" content="https://rafa231206.github.io/my_profile/img/quality_restoration_20250330050655089.jpg"> <!-- Ganti dengan URL gambar profil Anda -->
+    <meta property="og:url" content="https://rafa231206.github.io/my_profile/"> <!-- Ganti dengan URL website Anda -->
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Tags (Opsional) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Profil Pribadi Raihan Fahrel Akbar">
+    <meta name="twitter:description" content="Temukan informasi, media sosial, dan kontak Raihan Fahrel Akbar (Rafa_2312) di sini.">
+    <meta name="twitter:image" content="https://rafa231206.github.io/my_profile/img/quality_restoration_20250330050655089.jpg"> <!-- Ganti dengan URL gambar profil Anda -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Profile Pribadi</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#3498db">
 </head>
 <body>
-  
-  <div class="mode-selection" id="modeSelection">
-    <h2>Pilih Mode Tampilan</h2>
-    <div class="mode-options">
-      <div class="mode-btn light-mode-btn" onclick="selectMode('light')">
-        <i class="fas fa-sun"></i> Mode Terang
-      </div>
-      <div class="mode-btn dark-mode-btn" onclick="selectMode('dark')">
-        <i class="fas fa-moon"></i> Mode Gelap
-      </div>
-    </div>
-  </div>
-
-  <div class="profile-card" id="profileCard" style="display: none;">
-    <!-- Tombol Game di pojok kiri atas dalam kotak profile -->
-    <button id="gameButton"
-    class="absolute top-4 left-4 px-3 py-1 rounded-md font-semibold shadow-md z-30
-          bg-black text-white dark:bg-white dark:text-black hover:scale-105 transition-all"
-    onclick="window.location.href='https://rafa231206.github.io/SkyboundLovers/'">
-    🎮 Game
+  <div class="profile-card fade-in" id="profileCard" style="display: block;">
+    <button id="gameButton" class="game-button" onclick="window.location.href='https://rafa231206.github.io/SkyboundLovers/'">
+      <i class="fas fa-gamepad"></i>
     </button>
-    <div class="mode-toggle" id="modeToggle" onclick="toggleTheme()">
+    <div class="mode-toggle" id="modeToggle" onclick="toggleTheme()" style="position: absolute; top: 20px; left: 20px; z-index: 10;">
       <i class="fas fa-moon" id="toggleIcon"></i>
     </div>
 
     <img src="img/quality_restoration_20250330050655089.jpg" alt="Raihan Fahrel Akbar" class="profile-img" />
 
     <div class="audio-player">
-      <button class="play-btn" onclick="togglePlay()" id="playButton">▶</button>
+      <button class="play-btn" onclick="togglePlay()" id="playButton"><i class="fas fa-pause"></i> </button>
       <div class="track-info">
         <div class="track-title">Serana</div>
         <div class="track-artist">For Revenge</div>
@@ -87,6 +100,32 @@
           <br />Cuma buat nunjukin sedikit tentang gue sama link medsos gue. Masih newbie banget nih belajar coding, jadi simpel dulu ya.
           <br />Thanks udah mampir—jangan lupa follow !
         </p>
+        <h2 class="section-heading">Daftar Skill Saya</h2>
+        <div class="skills-grid">
+            <span class="skill-badge skill1"><i class="fab fa-html5"></i> HTML</span>
+            <span class="skill-badge skill2"><i class="fab fa-css3-alt"></i> CSS</span>
+            <span class="skill-badge skill3"><i class="fab fa-js-square"></i> JavaScript</span>
+            <span class="skill-badge skill4"><i class="fab fa-java"></i> Java</span>
+        </div>
+        <div class="github-section">
+            <h2 class="section-heading">Kunjungi GitHub</h2>
+            <a href="https://github.com/rafa231206" target="_blank" class="github-btn"><i class="fab fa-github"></i>
+            </a>
+        </div>
+      </div>
+    </div>
+    <div class="contact-container">
+      <button class="contact-toggle" onclick="toggleContactForm()">
+        <i class="fas fa-envelope"></i> Kirim Pesan
+      </button>
+      <div class="contact-form" id="contactForm">
+        <h2 class="section-heading">Kirim Pesan</h2>
+        <form action="https://formspree.io/f/xwpqpddr" method="POST"> <!-- Ganti yourformid dengan ID Formspree Anda -->
+          <input type="text" name="name" placeholder="Nama Anda" required>
+          <input type="email" name="_replyto" placeholder="Email Anda" required>
+          <textarea name="message" placeholder="Pesan Anda" rows="4" required></textarea>
+          <button type="submit">Kirim</button>
+        </form>
       </div>
     </div>
   </div>
