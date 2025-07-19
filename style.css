@@ -13,6 +13,14 @@
   --shadow-color: rgba(0, 0, 0, 0.1);
   --toggle-bg: linear-gradient(45deg, #f5f7fa, #c3cfe2);
   --toggle-icon: #f39c12;
+
+  /* New variables for skills and github */
+  --skill-bg-default: #3498db;
+  --skill-text-default: white;
+  --github-btn-bg: #24292e;
+  --github-btn-text: white;
+  --contact-toggle-bg: linear-gradient(45deg, #e74c3c, #f39c12);
+  --contact-submit-bg: linear-gradient(45deg, #2ecc71, #3498db);
 }
 
 .dark-mode {
@@ -27,6 +35,14 @@
   --shadow-color: rgba(0, 0, 0, 0.3);
   --toggle-bg: linear-gradient(45deg, #1a1a1a, #3d3d3d);
   --toggle-icon: #f1c40f;
+
+  /* Dark mode variables for skills and github */
+  --skill-bg-default: #555;
+  --skill-text-default: #ecf0f1;
+  --github-btn-bg: #4a5568;
+  --github-btn-text: #f7fafc;
+  --contact-toggle-bg: linear-gradient(45deg, #c0392b, #e67e22);
+  --contact-submit-bg: linear-gradient(45deg, #27ae60, #2980b9);
 }
 
 /*==================== BASE ====================*/
@@ -92,6 +108,36 @@ body {
   transform: scale(1.2);
 }
 
+/*==================== Game ====================*/
+.game-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--game-btn-bg, #4CAF50);
+  color: var(--game-btn-text, white);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+.game-button:hover {
+  background-color: var(--game-btn-hover, #3e8e41);
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+.dark-mode .game-button {
+  --game-btn-bg: #2d3748;
+  --game-btn-hover: #4a5568;
+  --game-btn-text: #f7fafc;
+}
 /*==================== PROFILE ====================*/
 .profile-img {
   width: 150px;
@@ -156,9 +202,15 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   gap: 15px;
-  animation: fadeIn 0.5s ease;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
-
+.social-links.show {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
 .social-icon {
   width: 50px;
   height: 50px;
@@ -343,85 +395,253 @@ body {
   border-radius: 10px;
   margin-top: 10px;
   box-shadow: 0 5px 15px var(--shadow-color);
-  animation: fadeIn 0.5s ease;
   text-align: center;
   font-size: 0.9rem;
   line-height: 1.4;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
-
+.username-info.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
 .username-info p {
   margin: 0;
+  margin-bottom: 15px; /* Add some space below the paragraph */
 }
 .username acronym {
   text-decoration: none;
   background: none;
 }
 
-/*==================== MODE SELECTION ====================*/
-.mode-selection {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  transition: opacity 0.5s ease;
-  background: linear-gradient(135deg, #1a2a6c, #9d2424, #f9c045);
-  background-size: 400% 400%;
-  animation: gradientBG 10s ease infinite;
-}
-
-.mode-selection h2 {
-  color: white;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.mode-options {
-  display: flex;
-  gap: 2rem;
-}
-
-.mode-btn {
-  padding: 1.5rem 2rem;
-  border-radius: 15px;
-  font-size: 1.2rem;
+/*==================== SECTION HEADINGS ====================*/
+.section-heading {
+  font-size: 1.3rem;
   font-weight: 600;
+  color: var(--text-color);
+  margin-top: 25px;
+  margin-bottom: 15px;
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/*==================== SKILLS ====================*/
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.skill-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 15px;
+  background-color: var(--skill-bg-default);
+  color: var(--skill-text-default);
+  border-radius: 50px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0; /* Initial state for animation */
+  transform: translateY(10px); /* Initial state for animation */
+  animation: fadeInMove 0.5s ease forwards; /* Apply animation */
+}
+
+.skill-badge:nth-child(1) { animation-delay: 0.1s; }
+.skill-badge:nth-child(2) { animation-delay: 0.2s; }
+.skill-badge:nth-child(3) { animation-delay: 0.3s; }
+.skill-badge:nth-child(4) { animation-delay: 0.4s; }
+
+.skill-badge i {
+  margin-right: 8px;
+  font-size: 1.1rem;
+}
+
+.skill-badge:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Specific skill colors */
+.skill1 { background-color: #e34c26; } /* HTML */
+.skill2 { background-color: #264de4; } /* CSS */
+.skill3 { background-color: #f0db4f; color: #333; } /* JS */
+.skill4 { background-color: #5382a1; } /* Java */
+
+/* Dark mode adjustments for specific skill colors */
+.dark-mode .skill1 { background-color: #d64520; }
+.dark-mode .skill2 { background-color: #1e3cb8; }
+.dark-mode .skill3 { background-color: #e0c820; color: #1a1a1a; }
+.dark-mode .skill4 { background-color: #4a728f; }
+
+
+/*==================== GITHUB BUTTON ====================*/
+.github-section {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.github-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex; /* Ubah dari inline-flex ke block */
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0; /* Increased padding for better look */
+    background-color: var(--github-btn-bg);
+    color: var(--github-btn-text);
+    font-size: 1rem;
+    text-decoration: none;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.github-btn i {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.github-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%; /* Start from left */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.15); /* Slightly more visible overlay */
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth cubic-bezier transition */
+    z-index: -1;
+}
+
+.github-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.github-btn:hover::before {
+    left: 0; /* Slide to cover */
+}
+
+/* Dark mode adjustments */
+.dark-mode .section-heading {
+    color: #9b59b6; /* Adjust heading color for dark mode */
+}
+
+.dark-mode .skill-badge {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .github-btn {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/*==================== CONTACT FORM ====================*/
+.contact-container {
+  margin-top: 25px;
+}
+
+.contact-toggle {
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
+  color: white;
+  border: none;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+  background: var(--contact-toggle-bg);
+  margin-bottom: 15px;
+}
+
+.contact-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+}
+
+.contact-form {
+  display: none;
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px var(--shadow-color);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease; /* Smooth transition */
+}
+
+.contact-form.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-form form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 150px;
-  height: 150px;
+  gap: 12px; /* Increased gap for better spacing */
 }
 
-.light-mode-btn {
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  color: #2c3e50;
+.contact-form input,
+.contact-form textarea {
+  padding: 12px; /* Increased padding */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem; /* Slightly larger font */
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.dark-mode-btn {
-  background: linear-gradient(135deg, #1a1a1a 0%, #3d3d3d 100%);
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #3498db; /* A more distinct focus color */
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3); /* Softer shadow */
+}
+
+.contact-form button[type="submit"] {
+  padding: 12px 25px; /* Increased padding */
+  border-radius: 50px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
   color: white;
+  border: none;
+  background: var(--contact-submit-bg);
+  box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+  margin-top: 15px; /* Increased margin */
 }
 
-.mode-btn:hover {
-  transform: scale(1.1);
-  background: linear-gradient(135deg, #e0eafc, #cfdef3);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+.contact-form button[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
 }
 
-.mode-btn i {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+/* Dark mode adjustments for contact form */
+.dark-mode .contact-form input,
+.dark-mode .contact-form textarea {
+  border: 1px solid #555;
+  background-color: rgba(40, 40, 40, 0.9);
+  color: var(--text-color);
 }
+
+.dark-mode .contact-form input:focus,
+.dark-mode .contact-form textarea:focus {
+  border-color: #8e44ad;
+  box-shadow: 0 0 0 3px rgba(142, 68, 173, 0.3);
+}
+
 
 /*==================== ANIMATIONS ====================*/
 @keyframes fadeIn {
@@ -440,10 +660,32 @@ body {
   to { transform: rotate(360deg); }
 }
 
+/* Custom fadeInMove for elements */
+@keyframes fadeInMove {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 /*==================== RESPONSIVE ====================*/
 @media (max-width: 480px) {
+  .mode-toggle {
+    top: 10px; /* Sesuaikan posisi */
+    left: 10px;
+    right: auto; /* Hapus right agar tidak konflik */
+  }
+  .game-button {
+    top: 10px; /* Sesuaikan posisi */
+    right: 10px;
+    left: auto; /* Hapus left agar tidak konflik */
+  }
   .profile-card {
-    padding: 20px;
+    padding: 15px;
   }
 
   .profile-img {
@@ -454,8 +696,45 @@ body {
   .name {
     font-size: 1.5rem;
   }
-
+  .audio-player {
+    max-width: 90%; /* Sesuaikan lebar audio player */
+    padding: 6px 10px;
+  }
+  .track-title {
+    font-size: 0.9rem;
+  }
+  .track-artist {
+    font-size: 0.75rem;
+  }
+  .social-icon {
+    width: 45px; /* Sedikit kurangi ukuran ikon sosial */
+    height: 45px;
+    font-size: 18px;
+  }
+  .username-info {
+    font-size: 0.85rem;
+  }
   .social-links {
     flex-wrap: wrap;
+  }
+  .skills-grid {
+    gap: 8px; /* Reduce gap on small screens */
+  }
+  .skill-badge {
+    font-size: 0.85rem; /* Smaller font for skills */
+    padding: 7px 12px;
+  }
+  .github-btn {
+    padding: 10px 20px; /* Adjust padding for github button */
+    font-size: 0.9rem;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+  .contact-form button[type="submit"] {
+    font-size: 0.95rem;
+    padding: 10px 20px;
   }
 }
