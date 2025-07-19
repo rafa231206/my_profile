@@ -2,7 +2,7 @@
     "name": "Profile Pribadi Rafa",
     "short_name": "Rafa Profile",
     "description": "Profil pribadi Raihan Fahrel Akbar",
-    "start_url": "/",
+    "start_url": "index.html",
     "display": "standalone",
     "background_color": "#f5f7fa",
     "theme_color": "#3498db",
